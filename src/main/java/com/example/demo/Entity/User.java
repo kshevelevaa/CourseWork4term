@@ -113,26 +113,28 @@ public class User implements UserDetails {
     public void setEmail(String email) {
         this.email = email;
     }
-    
-    public int getDressCount(int dressNumber){
-        for (Dress item : list){
-            if (item.getDressNumber() == dressNumber){
+
+    public int getDressCount(int dressNumber) {
+        for (Dress item : list) {
+            if (item.getDressNumber() == dressNumber) {
                 return item.getDressCount();
             }
         }
         return 0;
     }
-    public Dress getDress(int dressNumber){
-        for (Dress item: list){
+
+    public Dress getDress(int dressNumber) {
+        for (Dress item : list) {
             if (item.getDressNumber() == dressNumber)
                 return item;
         }
         return null;
     }
-    public String getOrderPrice(){
+
+    public String getOrderPrice() {
         int total = 0;
-        for (Dress item: this.list){
-            String temp = item.getPriceForManyDresses().replace(" руб.","");
+        for (Dress item : this.list) {
+            String temp = item.getPriceForManyDresses().replace(" руб.", "");
             total += Integer.parseInt(temp);
         }
         return total + " руб.";
