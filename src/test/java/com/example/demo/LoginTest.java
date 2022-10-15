@@ -33,7 +33,6 @@ public class LoginTest {
                 .andDo(print())
                 .andExpect(status().isOk())
                 .andExpect(content().string(containsString("Login")));
-//                .andExpect(content().string(containsString("Have an account?")));
     }
 
     @Test

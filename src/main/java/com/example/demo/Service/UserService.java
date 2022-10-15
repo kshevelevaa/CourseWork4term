@@ -31,8 +31,7 @@ public class UserService implements UserDetailsService {
     public boolean saveUser(User user) {
         User user1 = userRepo.findUserByUsername(user.getUsername());
 
-        if (user1 != null)
-            return false;
+        if (user1 != null) return false;
 
         user.setPassword(bCryptPasswordEncoder.encode(user.getPassword()));
         userRepo.save(user);

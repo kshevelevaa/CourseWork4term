@@ -15,16 +15,13 @@ public class Dress {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private int id;
-
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "user_id")
     private User userId;
     private int dressNumber;
     private int dressCount = 1;
-
     public Dress() {
     }
-
     public Dress(User userId, int dressNumber) {
         this.userId = userId;
         this.dressNumber = dressNumber;
@@ -90,7 +87,6 @@ public class Dress {
             default -> "";
         };
     }
-
     public String getItemName() {
         return switch (this.dressNumber) {
             case 1 -> "Серое платье";
@@ -104,7 +100,6 @@ public class Dress {
             default -> "";
         };
     }
-
     public String getPhotoAddress() {
         return "images/dress" + dressNumber + ".jpg";
     }
